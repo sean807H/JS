@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>반복문(for,for-in,for-of,while)</title>
+</head>
+<body>
+    <script>
+        // for(var i=0; i<5; i++){
+        //     console.log("The Number is "+i);
+        // }
+        // // console.log(i);
+
+        // var i = 1;
+        // var len = 10;
+        // var total = 0;
+
+        // for(; i<=len;){
+        //     total += i;
+        //     i++;
+        // }
+
+        // console.log("총 합은  = "+total);
+        
+        // break, continue
+        // for(var i=0; i<5; i++){
+        //     if(i===3){
+        //         // break;
+        //         continue;
+        //     }
+        //     console.log("The 숫자 is "+i);
+            
+        // }
+
+        var numbers = [43, 23, 5, 7, 99, 12, 19];
+
+        // var len = numbers.length;
+        // for(var i=0; i<len; i++){
+        //     console.log(numbers[i]);
+        // }
+
+        // 향상된 for문
+        for(var i in numbers){         // 배열의 인덱스 값이 넣어짐
+            console.log(i);
+        }
+
+        for(var num of numbers){        // 배열의 값이 넣어짐
+            console.log(num);
+        }
+
+
+        
+    </script>
+</body>
+</html>

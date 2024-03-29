@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>String 내장 함수</title>
+</head>
+<body>
+    <script>
+        // length :  문자열의 길이를 리턴
+        var txt = "dkssudgktpy";
+        console.log(txt.length);
+
+        // indextOf
+        var str = "Please locate where 'locate'";
+        // console.log(str);
+        console.log(str.indexOf("locate"));     // 출력값 7
+        console.log(str.indexOf("kim"));        // 출력값 -1 없다.
+
+        if(str.indexOf("locate")>-1){
+            console.log("locate 문자 발견");
+        }
+
+        // lastIndexOf
+        console.log(str.lastIndexOf("locate"));
+
+        // search = indexOf
+        console.log(str.search("locate"));
+
+        // slice
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7,13));
+        console.log(str.slice(7));
+        console.log(str.slice(-12,-6));
+        console.log(str.slice(-12));
+
+        // substring = slice
+        console.log(str.substring(7,13));
+
+        // substr
+        console.log(str.substr(7,6))        // 정말 많으쓰고 중요함!!!!!!!!
+
+        var jumin1 = "070828";
+        console.log(jumin1.substr(0,2));
+        console.log(jumin1.substr(2,2));
+        console.log(jumin1.substr(4,2));
+
+        // 코딩테스트
+        var jumin2 = "2007-08-28";
+        console.log(jumin2.indexOf("-"));
+        console.log(jumin2.substring(0,jumin2.indexOf("-")));
+
+        // replace
+        var str1 = "please visit here";
+        var str2 = str1.replace("here","there");
+        console.log(str2);
+        
+    </script>
+</body>
+</html>
