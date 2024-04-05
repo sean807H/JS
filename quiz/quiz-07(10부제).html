@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>10부제</title>
+</head>
+<body>
+    <script>
+        function solution(day, arr){
+            let answer = 0;
+            for(x of arr){
+                if(x%10===day){
+                    answer++;
+                }
+            }
+            return answer;
+        }
+        arr1 = [25,23,11,47,53,17,33]       //3일 = 자동차 3대
+        // arr2 = [12,20,54,30,87,91,30]       //0일 = 자동차 3대
+        console.log(solution(3, arr1));
+    </script>
+</body>
+</html>

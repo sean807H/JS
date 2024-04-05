@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Number 내장함수</title>
+</head>
+<body>
+    <script>
+        console.log(Number.MAX_SAFE_INTEGER);
+        console.log(Number.MIN_SAFE_INTEGER);
+
+        // toString()
+        var x1 = 123;
+        console.log(x1+1);
+        console.log(x1.toString()+1);        // 문자 연결자
+        console.log(x1.toString(2));         // 2진수가 나옴
+
+        // toFixed() : 저장된 소수점 자릿수까지 반올림으로 표기
+        var x2 = 123999.562243;
+        console.log(x2.toFixed(2));
+
+        // toPrecision()
+        var x3 = 9.567;
+        console.log(x3.toPrecision(2));      // 정수까지 포함된 자릿수
+
+        var x4 = Number("10");               // 문자 10 -> 숫자 10
+        console.log(x4+2);
+
+        var x5 = Number(true);
+        console.log(x5);
+
+        console.log(Number("                     10                   "));
+        console.log(Number("            11       10      21             "));
+        console.log(Number("10.33"));
+        console.log(Number("10,33"));
+        console.log(Number("chio"));
+        console.log(Number("10 30"));
+
+
+
+    </script>
+</body>
+</html>
