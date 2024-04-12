@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Boolean 내장객체</title>
+</head>
+<body>
+    <script>
+        var x1 = true;                  // var x1 = false(call by value)
+        var y1 = new Boolean(true);     // call by reperance
+
+        //console.log(typeof x1)
+        //console.log(typeof y1)
+
+        console.log(x1 == y1)
+        console.log(x1 === y1)
+
+        var x2 = "abc";
+        var y2 = new String("abc")
+
+        console.log(typeof x1)
+        console.log(typeof y1)
+
+        console.log(x1 == y1)
+        console.log(x1 === y1)
+
+        console.log(Boolean(10>9));      // object true
+        console.log(10>9);                // 그냥 true
+
+        // var x = 0;
+        // console.log(x);
+        // console.log(Boolean(x));
+
+        var x = "";
+        console.log(Boolean(x));
+    </script>
+</body>
+</html>

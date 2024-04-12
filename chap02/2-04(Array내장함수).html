@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>Array 내장함수</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        // toString()
+        /*var fruits1 = ["Banana", "Orange", "Apple"];
+        console.log(fruits1.toString());
+
+        // join()
+        console.log(fruits1.join("***"));
+        var txt1 = "Banana<br>";
+        txt1 += "orange<br>";
+        txt1 += "Apple<br>";
+        console.log(txt1);
+        document.getElementById("div1").innerHTML = txt1;
+
+        var arr1 = [];
+        arr1.push("banana")
+        arr1.push(orange);
+        arr1.push("arr1")
+        document.getElementById("div1").innerHTML = arr1.join;*/
+
+
+        // pop() : 배열의 마지막 항목을 제거하여 리턴
+        /*var fruits2 = ["Banana", "Orange", "Apple"];
+        var arr2 = fruits2.pop();
+        console.log(arr2);
+        console.log(fruits2);
+
+        // push() : 배열의 가장 마지막에 새로운 항목을 추가
+        fruits2.push("Kiwi")
+        console.log(fruits2)
+
+        //shift() : 배열의 첫 번쨰 항목을 제거하여 리턴함
+        var fruits3 = ["Banana", "Orange", "Apple"];
+        var str = fruits3.shift();
+        console.log(str)
+        console.log(fruits3)
+
+        // unshift() : 배열의 첫번째에 새로운 항목을 추가함
+        var fruits4 = ["Banana", "Orange", "Apple"];
+        fruits4.unshift("lemon");
+        console.log(fruits4)
+
+        fruits4[0] = "Grape";
+        console.log(fruits4)
+        console.log(fruits4.length)
+        fruits4[fruits4.length -1] = "Peach";
+        console.log(fruits4)*/
+
+        // splice(a,b) : a = 시작위치, b = 삭제할 항목 수
+        /*var fruit = ["Banana", "Orange", "Apple"];
+        // fruit.splice(1,2)
+        // console.log(fruit)
+        fruit.splice(1,0,"Lemon","kiwi")
+        console.log(fruit)
+
+        // concat() : 두 개의 배열을 하나로 만들어줌
+        var SVT1 = ["도겸"]
+        var SVT2 = ["디노"]
+        var SVT3 = ["원우"]
+        var SVT4 = SVT1.concat(SVT2,SVT3)
+        console.log(SVT4)
+
+        // slice(a,b) : a부터 b-1까지 항목을 가져옴
+        var fruit6 = ["Banana", "Orange", "Apple"];
+        var fruit7 = fruit6.slice(1,2)
+        console.log(fruit7)
+
+        // sort() : 정렬
+        var SVT = ["도겸", "디노", "원우", "호시", "민규", "승철"]
+        console.log(SVT.sort())
+
+        var points = [40, 100, 70, 21, 99]
+        console.log(points.sort())      // 숫자를 문자로 인식하여 오름차순 정렬
+
+        points.sort(function(a,b){
+            if(a>b)
+                return 1;           // return true
+            else
+                return -1;          // return false
+        })
+        console.log(points)
+
+        points.sort(function(a,b){
+            return a-b;             // return b-a
+        })
+        console.log(points)
+        console.log(points.reverse())*/
+
+        // object 정렬
+        /*var persons = [
+            {name:"이석민",point:28},
+            {name:"이찬",point:27},
+            {name:"전원우",point:29},
+            {name:"김민규",point:28},
+            {name:"권순영",point:29}
+        ]
+
+        //console.log(persons.sort())   // object에는 정렬이 적용되지 않는다
+        persons.sort(function(a,b){
+            if(a.point > b.point)
+                return -1;
+            else
+                return 1;
+        })
+        console.log(persons)
+
+        persons.sort(function(a,b){
+            // 삼항 연산자
+            return (a.point>b.point) ? true : false
+        })
+        console.log(persons)
+
+        // ****** filter() : 조건에 맞는 배열만 리턴
+        var pass = persons.filter(function(per){
+            return per.point > 28
+        })
+        console.log(pass)*/
+
+        var persons = [
+            {name:"이석민",point:28, city:"용산"},
+            {name:"이찬",point:27, city:"하이브"},
+            {name:"전원우",point:29, city:"하이브"},
+            {name:"김민규",point:28, city:"하이브"},
+            {name:"권순영",point:29, city:"용산"}
+        ]
+
+        // var hybe = [];
+        // for(var i=0; i < persons.length; i++){
+        //     if(person[i].city === "하이브")
+        //         hybe.push(persons[i]);
+        // }
+        // console.log(hybe)
+
+        var SVT = persons.filter(function(per){
+            return per.city === "하이브";
+        })
+        console.log(SVT)
+
+        // ***** reduce
+        // var arr3 = [1,2,3,4]
+        // var total = 0;
+        // for(var x of arr3){
+        //     total += x;
+        // }
+        // console.log(total)
+        
+        // reduce(a,c)
+        // a : accumulator = 누산기
+        // c : currentValue = 현재값
+        var arr4 = [1,2,3,4]
+        var total = arr4.reduce(function(a,c){
+            return a+c;
+        })
+        console.log(total)
+
+        // map
+
+
+
+    </script>
+
+</body>
+</html>
