@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Date 내장함수</title>
+</head>
+<body>
+    <script>
+        // 특정날짜를 가져옴
+        // var d1 = new Date()
+        // console.log(d1)
+        
+        // 월은 0부터 시작(글로벌 번역이라), 일은 1부터 시작
+        var d2 = new Date(2024, 7, 14, 18, 14);
+        console.log(d2);
+
+        var d3 = new Date();
+        console.log(d3);
+
+        var year = d3.getFullYear();
+        console.log("Year ",year);
+
+        var month = d3.getMonth();
+        console.log("Month ",month+1);
+
+        var date = d3.getDate();
+        console.log("Date ", date);
+
+        var day = d3.getDay();
+        console.log("Day ", day);       // 일요일 : 0, 월요일 : 1 ...
+
+        var hour = d3.getHours();
+        var minute = d3.getMinutes();
+        var second = d3.getSeconds();
+        console.log(hour, minute, second);
+
+        // 글로벌 서비스일 경우에는 접속한 국가의 타임존을 고려
+        // 2024.04.19 15:05:10 (한국)
+        // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야함
+        // 서버에 접속한 국가는 각각의 시간대를 + 해야함.
+        
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>일곱난쟁이</title>
+</head>
+<body>
+    <script>
+        function solution(arr){
+            let answer = arr;
+
+            // 방법 1
+            // let sum = 0;
+            // for(var i = 0; i<arr.length; i++){
+            //     sum += arr[i]
+            // }
+
+            // 방법2 : for of를 이용한 방법(in = 인덱스)
+            // let sum = 0;
+            // for(let x of arr){
+            //     sum += x;
+            // }
+
+            // 방법3 : reduce()사용
+            // let sum = answer.reduce(function(a,b){
+            //     return a+b;
+            // })
+            // console.log(sum)
+
+            // 방법4 : arrow Function
+            let sum = arr.reduce((a,b) => a+b);
+            for(let i = 0; i<arr.length; i++){
+                for(let j = i+1; j < arr.length; j++){
+                    // console.log(arr[i],arr[j]);
+                    if(sum - (arr[i]+arr[j]) === 100){
+                        // console.log(i,j);       // 5, 6번째 범인
+                        arr.splice(j, 1)
+                        arr.splice(i, 1)
+                    }
+                }
+            }
+            return answer;
+        }
+        var arr1 = [20,7,23,19,10,15,25,8,13]
+        console.log(solution(arr1));
+    </script>
+</body>
+</html>
