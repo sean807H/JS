@@ -3,12 +3,14 @@
     <title>Date 내장함수</title>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script>
         // 특정날짜를 가져옴
         // var d1 = new Date()
         // console.log(d1)
         
         // 월은 0부터 시작(글로벌 번역이라), 일은 1부터 시작
+        /*
         var d2 = new Date(2024, 7, 14, 18, 14);
         console.log(d2);
 
@@ -31,13 +33,36 @@
         var minute = d3.getMinutes();
         var second = d3.getSeconds();
         console.log(hour, minute, second);
+        */
 
         // 글로벌 서비스일 경우에는 접속한 국가의 타임존을 고려
         // 2024.04.19 15:05:10 (한국)
-        // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야함
+        // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야함    
         // 서버에 접속한 국가는 각각의 시간대를 + 해야함.
         
+        // var d4 = new Date();
+        // console.log(d4.getTimezoneOffset())     // -540분
 
+        // 특정 날짜와 시간을 조정
+        // var d5 = new Date();
+        // d5.setFullYear(2007)
+        // d5.setMonth(7)
+        // d5.setDate(14)
+        // console.log(d5)
+
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));        // moments js cdn
+        
+        console.log(moment().format("YYYY-MM-DD"))
+        console.log(moment().format("MM DD, YYYY"))
+
+        // 오늘을 기준으로 일주일전을 검색
+        console.log(moment().subtract(7,"days").format("YYYY-MM-DD"))
+
+        // 오늘을 100일후는 언제일까요?
+        console.log(moment().add(100,"days").format("YYYY-MM-DD"))
+
+        // 지금을 기준으로 4시간 후
+        console.log(moment().add(4,"hours").format("YYYY-MM-DD HH"))
 
 
     </script>
