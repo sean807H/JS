@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Window객체</title>
+</head>
+<body>
+    <!-- <h1>도겸아 사랑해</h1> -->
+    <script>
+        // window 내장객체
+        // console.log(window);
+        // alert("SVT 화이팅");        // window.alert 생략 가능
+
+        // var yn = confirm("정말로 탈퇴하겠습니까?")
+        // console.log(yn)
+
+        // if(confirm("정말로 탈퇴하겠습니까?")) {
+        //     // 탈퇴 처리
+        //     console.log("회원 탈퇴")
+        // }
+
+        // var text = prompt("당신이 좋아하는 연예인은?")
+        // // console.log(text)
+        // if(text === null){
+        //     console.log("취소")
+        // }
+        // else if(text===""){
+        //     console.log("공백")
+        // }
+        // else if(text!=null){
+        //     console.log(text)
+        // }
+        
+        // window.open("http://naver.com")         // 팝업창 띄울때 많이 씀
+
+        // window.print();                         // 인쇄 프린트 할때 씀
+
+        // setTimeout = n초 뒤에 딱 나오는 텍스트
+        // setTimeout(function(){
+        //     console.log("도겸아 사랑해")
+        // }, 3000)
+
+        // setInterval
+        // var i = 0;
+        // setInterval(function(){
+        //     console.log("도겸아 사랑해 : "+i);
+        //     i++;
+        // },3000)
+
+        var i = 0;
+        var fnc = setInterval(function(){
+            console.log("도겸아 사랑해 : "+i);
+            i++;
+            if(i===10) {
+                clearInterval(fnc);
+            }
+        },3000)
+    </script>
+</body>
+</html>

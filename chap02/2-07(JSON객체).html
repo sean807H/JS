@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>JSON 객체</title>
+    <!-- 통신할때 필요한 언어 -->
+</head>
+<body>
+    <script>
+        // 데이터를 저장하고 전송하기 위한 데이터포맷
+        // 서버에서 클라이언트로 데이터를 전송할때 사용
+        // 날씨정보, 환율정보, 버스정보, 지하철정보
+        // JSON: JavaScript Object Notion의 약자
+        // JSON의 기본 형태
+        var data = {
+            "employees" : [         // employees : [] / key : value
+                {"firstName" : "길동", "lastName" : "홍"},
+                {"firstName" : "길순", "lastName" : "김"},
+                {"firstName" : "철수", "lastName" : "최"}
+            ]
+        };
+
+        console.log(data.employees[0].firstName)
+
+        // JSON.stringify - object를 string으로 변환해서 출력
+        console.log(typeof data)
+        console.log(typeof JSON.stringify(data))
+        
+        // JSON.parse - string을 object로 변환해서 출력
+        var text = '{ "employees" : [' +
+                '{"firstName" : "길동", "lastName" : "홍"},' +
+                '{"firstName" : "길순", "lastName" : "김"},' +
+                '{"firstName" : "철수", "lastName" : "최"}]}';
+        console.log(typeof text)
+        console.log(typeof JSON.parse(text))
+
+    </script>
+</body>
+</html>
