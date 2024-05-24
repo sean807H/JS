@@ -36,7 +36,7 @@
         */
 
         // 글로벌 서비스일 경우에는 접속한 국가의 타임존을 고려
-        // 2024.04.19 15:05:10 (한국)
+        // 2024.04.19 15:05:10 (한국) --> 2024.04.19 06:05:10 영국과 9시간 차이 서버에 저장
         // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야함    
         // 서버에 접속한 국가는 각각의 시간대를 + 해야함.
         
@@ -62,7 +62,7 @@
         console.log(moment().add(100,"days").format("YYYY-MM-DD"))
 
         // 지금을 기준으로 4시간 후
-        console.log(moment().add(4,"hours").format("YYYY-MM-DD HH"))
+        console.log(moment().add(4,"hours").format("YYYY-MM-DD h"))
 
 
     </script>

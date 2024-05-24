@@ -51,6 +51,66 @@
         var str1 = "please visit here";
         var str2 = str1.replace("here","there");
         console.log(str2);
+
+        var str3 = "Please visit Here here here";
+        var str4 = str3.replace("here","there");
+        console.log(str4)
+
+        // 정규표현식
+        var str5 = "Please visit Here here here";
+        var str6 = str5.replace(/here/g, "there");
+        console.log(str6);
+
+        var str7 = "Plaease visit HERE Here HeRe";
+        var str8 = str5.replace(/here/gi, "there"); // i = ignore : 대소문자 무시
+        console.log(str8);
+
+        // 대문자로 : uppercase
+        var str9 = "Please visit Here HERE here";
+        console.log(str9.toUpperCase());
+        
+        // 소문자로 : lowercase
+        var str10 = "Please visit Here HERE here";
+        console.log(str10.toLowerCase());
+
+        // 데이터베이스 : HOHN, john, John
+        var txt1 = "Hello";
+        var txt2 = "World";
+        var txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+        
+        // concat
+        console.log(txt1.concat(" ", txt2));
+        console.log(txt1.concat(txt2));
+        console.log(txt1.concat(" ", "Hong", "Love", txt2)); 
+
+        // padStart
+        var str11 = "1234";
+        console.log(str11.padStart(8, 0)); // 8자리 잡고 남는 자리에 0을 넣어라
+        console.log("C-" + str11.padStart(8, 0));
+        console.log("C-" + "aswerwerwerwe".padStart(8, 0));
+
+        // 특정 자릿수를 통일하기 위해서 사용
+        var str12 = "5";
+        console.log(str12.padStart(2, 0));
+
+        // padEnd
+        console.log(str12.padEnd(4, 0));
+
+        // charAt()
+        // 특정한 글자의 위치 값
+        var str13 = "Hello World";
+        console.log(str13.charAt(0));
+
+        // split 별별별
+        var tags = "키보드, 기계식, 블루투스, 휠마우스, 광마우스";
+        var arr1 = tags.split(", ");
+        console.log(arr1);
+        console.log(typeof(arr1))
+
+        var birthday = "2007-08-28";
+        var arr2 = birthday.split("-");
+        console.log(arr2); 
         
     </script>
 </body>
