@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>가운데 문자 출력하기</title>
+</head>
+<body>
+    <script>
+        function solution(s){
+            let answer = "";
+            let len = s.length;
+            let middle = Math.floor(s.length / 2);
+
+            if (s.length % 2 === 0) {
+                // answer = s.substring(middle - 1, middle + 1);
+                answer = s.substr(middle-1, middle);
+            } else {
+                // answer = s.substring(middle, middle + 1);
+                answer = s.substr(middle, middle-1);
+            }
+
+            return answer;
+        }
+        // console.log(solution("study"));
+        console.log(solution("good"));
+    </script>
+</body>
+</html>
