@@ -6,13 +6,55 @@
     <script>
         function solution(s){
             let answer = "";
-        for (let x of s) {
-            if (answer.indexOf(x) === -1) {
-                answer += x;
+
+        // indexOf() 함수를 이용
+        // console.log(s.indexOf('k'))  결과값 : 0
+        // console.log(s.indexOf('R'))  결과값 : -1
+
+        for(let i=0; i<s.length; i++){
+            // console.log(s[i], i, s.indexOf(s[i]));
+            if(i===s.indexOf(s[i])){
+                // console.log(s[i]);
+                answer += s[i]
             }
+
         }
-            return answer;
+
+            let answers = 0;
+        let word = prompt("찾고자 하는 문자를 입력해주세요 : ");
+        let pos = s.indexOf(word);
+        while(pos!==-1){
+            answers ++;
+            pos = s.indexOf(word,pos+1);
         }
+
+        // my answer
+        // for (let x of s) {
+        //     if (answer.indexOf(x) === -1) {
+        //         answer += x;
+        //     }
+        // }
+
+        // my answer
+        // let count = 0;
+        // let text = prompt("찾고싶은 문자는?");
+
+        // for (let x of s) {
+        //     if (answer.indexOf(x) === -1) {
+        //         answer += x;
+        //     }
+        //     if (x === text) {
+        //         count++;
+        //     }
+        // }
+        
+        // console.log(`${text} 문자가 ${count}개 있습니다`);
+
+        return answer;
+    }
+
+
+        
         console.log(solution("ksekkset"));
     </script>
 </body>
