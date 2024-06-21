@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>this 키워드</title>
+</head>
+<body>
+
+    <!-- <button onclick="fullName()">클릭1</button> -->
+    <button onclick="this.style.backgroundColor = 'red'">클릭1</button>
+    <button onclick="callFunc(this)">클릭2</button>
+    <select onchange="changeSelect(this)">
+        <option value="모에">1</option>
+        <option value="무에">2</option>
+        <option value="뀽">3</option>
+    </select>
+
+    <script>
+        // this는 window객체를 지칭
+        console.log(this);
+        console.log(window);
+
+        function changeSelect(obj){
+            // console.log(obj);
+            console.log(obj.value);
+        }
+
+        function callFunc(obj){
+            console.log(obj);   
+        }
+
+        function fullName(){
+            alert("얼레리꼴레리 메롱~");
+            // console.log(this);
+        }
+
+        var person = {
+            firstName : "길동",
+            lastName : "홍",
+            fullName : function()
+            {
+                return this.firstName + " " + this.lastName;
+                // return person.firstName + " " + person.lastName;
+            }
+        };
+        console.log(person.fullName());
+        // fullName();
+    </script>
+</body>
+</html>
