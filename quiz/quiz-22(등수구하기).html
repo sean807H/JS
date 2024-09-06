@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>등수구하기</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            // let answer = [1, 1, 1, 1, 1];
+            let n = arr.length;
+            let answer = Array.from({length:n}, ()=> 1);
+
+            for (let i in arr) {
+                for (let j in arr) {
+                    if (arr[i] < arr[j]) {
+                        answer[i]++;
+                    }
+                }
+            }
+            return answer;
+        }
+
+        let arr = [87, 89, 92, 100, 76];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>
