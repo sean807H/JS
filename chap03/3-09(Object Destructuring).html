@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Object Destructuring</title>
+</head>
+<body>
+    <script>
+        function getPerson(){
+            return{
+                firstName : "석민",
+                lastName : "이",
+                age : 28,
+                email : "dkisdokyeom@gmail.com",
+                city : "Seoul",
+                country : "HYBE"
+            }
+        }
+
+        // var per = getPerson();
+        // console.log(per);
+
+        var {firstName, lastName} = getPerson();
+        console.log(firstName);
+        console.log(lastName);
+        // console.log(city);       -- 에러발생
+
+    </script>
+</body>
+</html>
