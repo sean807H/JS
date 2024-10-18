@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>회문 문자열</title>
+</head>
+
+<body>
+    <script>
+        function solution(str) {
+
+            let answer = str.toLowerCase();
+
+            // str = str.toLowerCase();
+            // let len = str.length;
+
+            // 방법1 : 직접 비교 방식
+            // for (let i = 0; i < Math.floor(len / 2); i++) {
+            //     if(str[i] !== str[len-i-1]) return "NO";
+
+            // }
+
+            if (answer === answer.split('').reverse().join('')) {
+                return "YES";
+            } else {
+                return "NO";
+            }
+
+            return answer;
+        }
+        let str = "gooG";
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>
