@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>클래스(class)</title>
+</head>
+<body>
+    <script>
+        // 클래스 : 객체를 생성하기 위한 틀, 설계도
+        // 자동차 클래스
+        // 정보은닉 : getter/setter 객체가 정당한 권한을 부여해주는 것
+        // 알려주기만 하고 못 바꾸게 할거야 = getter
+        // 알려주고 바꿀 수 있게 할거야 = getter/setter
+        class Car{
+            constructor(modelName, modelYear, type, price){
+                this.modelName = modelName;
+                this.modelYear = modelYear;
+                this.type = type;
+                this.price = price;
+            }
+
+            getModelName(){
+                return this.modelName;
+            }
+
+            getModelYear(){
+                return this.modelYear;
+            }
+
+            getType(){
+                return this.type;
+            }
+
+            getPrice(){
+                return this.price;
+            }
+
+            setPrice(price){
+                this.price = price;
+            }
+        }
+
+        let car = new Car("아이오닉","2021","e",4000);
+        console.log(car.getModelName());
+        console.log(car.getModelYear());
+        console.log(car.getPrice());
+        car.setPrice(2500);
+        console.log(car.getPrice());
+        console.log(car.getType());
+
+    </script>
+</body>
+</html>

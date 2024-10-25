@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>회문문자열2</title>
+</head>
+
+<body>
+    <script>
+        function solution(str) {
+            let answer = "";
+            str = str.toLowerCase().replace(/[^a-z]/g,"")
+
+            // for (let char of str.toLowerCase()) {
+            //     if (char >= 'a' && char <= 'z') {
+            //         answer += char;
+            //     }
+            // }
+
+            if (str === str.split('').reverse().join('')) {
+                return "YES";
+            } else {
+                return "NO";
+            }
+
+            return answer;
+        }
+        let str = "found77, Time^, study, Yduts; emit, 9Dnuof"
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>
