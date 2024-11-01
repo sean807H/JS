@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Try Catch Finally</title>
+</head>
+<body>
+    <script>
+        // try{
+        //     consol.log("log 메세지");
+        // }
+        // catch(err){
+        //     console.log(err.name);
+        //     console.log(err.message);
+        // }
+        // console.log("안녕하세요");
+
+        // throw를 사용하여 강제로 예외를 발생시킴
+        var x = 5;
+        
+        try{
+            if(x==="") throw "empty";
+            var y = x+3;
+            console.log(y);
+        } catch(error){
+            console.log(`error message : ${error}`);
+        } finally{
+            console.log("exception 유무와 상관없이 무조건 실행됨.");
+        }
+    </script>
+</body>
+</html>

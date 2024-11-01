@@ -38,13 +38,41 @@
             }
         }
 
-        let car = new Car("아이오닉","2021","e",4000);
-        console.log(car.getModelName());
-        console.log(car.getModelYear());
-        console.log(car.getPrice());
-        car.setPrice(2500);
-        console.log(car.getPrice());
-        console.log(car.getType());
+        // let car = new Car("아이오닉","2021","e",4000);
+        // console.log(car.getModelName());
+        // console.log(car.getModelYear());
+        // console.log(car.getPrice());
+        // car.setPrice(2500);
+        // console.log(car.getPrice());
+        // console.log(car.getType());
+
+        // let car2 = new Car("도겸","1997","28",17);
+        // console.log(car2.getModelName());
+        // console.log(car2.getModelYear());
+        // console.log(car2.getPrice());
+        // car2.setPrice(13);
+        // console.log(car2.getPrice());
+        
+        class ElectroniCar extends Car{
+            constructor(modelName, modelYear, price){
+                super(modelName, modelYear, "e", price);
+            }
+
+            getTime(){
+                return this.time;
+            }
+            setTime(time){
+                this.time = time;
+            }
+        }
+
+        let eleCar1 = new ElectroniCar("아이오닉2","2024",4000);
+        console.log(eleCar1.getModelName(   ));
+        console.log(eleCar1.getModelYear());
+        console.log(eleCar1.getPrice());
+        console.log(eleCar1.getType());
+        eleCar1.setTime(30);
+        console.log(eleCar1.getTime());
 
     </script>
 </body>

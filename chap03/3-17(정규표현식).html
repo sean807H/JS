@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>정규표현식(Rugular Expression)</title>
+</head>
+<body>
+    <script>
+        //정규표현식 형식 : /pattern/modifier
+        // var patt = /Worid/ig;
+
+        // var str1 = "Hello World";
+        // console.log(str1.search("World"));
+        // console.log(str1.search(/World/));
+        // console.log(str1.search(/World/i));     // i 대소문자 구분을 안함.
+
+        // var str2 = "Hello WORLD! word";
+        // console.log(str2.replace("World","Hong"));
+        // console.log(str2.replace(/World/ig,"Hong"));        // g : 전부 다 교체
+
+        // var patt = /Worid/ig;
+        // console.log(str2.replace(patt,"Hong"))
+
+        // var str3 = "Is this all there is";
+        // var patt1 = /[hat]/g;
+        // var result1 = str3.match(patt1)
+        // console.log(result1);
+
+        // var str4 = "as00fkaf234jklj2lkjlk3904l1jlj3j";
+        // var patt2 = /[0-9]/g;
+        // var result2 = str4.match(patt2);
+        // // console.log(result2);
+        // console.log(parseInt(result2.join("")));
+
+        var str5 = "re, green, red, gree, gen, red, blue, yellow"
+        var patt3 = /(red|green)/g;
+        var result3 = str5.match(patt3);
+        console.log(result3);
+
+        // \d : 숫자인거 찾기
+        var str6 = "Please call 119 Hurry Up"
+        var patt4 = /\d/g;
+        var result4 = str6.match(patt4)
+        console.log(result4);
+
+        // \s : 공백 문자 찾기
+        var str7 = "Please call 119 Hurry Up"
+        var patt5 = /\s/g;
+        var result5 = str7.match(patt5)
+        console.log(result5);
+
+        // \b : LO 로 시작하는 단어를 찾기
+        var str8 = "HELLO, LOOK AT ME"
+        var patt6 = /\bLO/g;
+        var result6 = str8.match(patt6)
+        console.log(result6);
+
+        // n+ : n이 최소한 1개 이상(one or more)
+        var str9 = "HelloOo";
+        var patt7 = /o+/g;      // oo, o
+        console.log(str9.match(patt7));
+
+        // n* : n이 zero or more
+        var str10 = "HelloOo WOrld";
+        var patt8 = /lo*/g;     // l로 시작해야되고 뒤에 o 가 있어도 되고 없어도 되고 그래서 l, lo, l
+        var patt9 = /lo+/g;     // lo
+        console.log(str10.match(patt8));
+        console.log(str10.match(patt9));
+
+        // n?: zero or one
+        var str11 = "1, 100 and 1000 or 1111";
+        var patt10 = /10?/g;
+        console.log(str11.match(patt10));
+    </script>
+</body>
+</html>
