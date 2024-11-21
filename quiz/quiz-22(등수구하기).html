@@ -1,26 +1,32 @@
 <html>
+
 <head>
     <title>등수구하기</title>
 </head>
+
 <body>
     <script>
         function solution(arr) {
-            // let answer = [1, 1, 1, 1, 1];
+            // 배열 arr의 길이만큼 1로 초기화된 배열 생성 (모두 1등으로 시작)
             let n = arr.length;
-            let answer = Array.from({length:n}, ()=> 1);
+            let answer = Array.from({ length: n }, () => 1);    // let answer = [1, 1, 1, 1, 1]
 
-            for (let i in arr) {
-                for (let j in arr) {
-                    if (arr[i] < arr[j]) {
-                        answer[i]++;
+            // 각 학생의 점수를 비교하여 등수 계산
+            for (let i in arr) { // 기준 학생 i
+                for (let j in arr) { // 비교 학생 j
+                    if (arr[i] < arr[j]) { // 기준 학생 점수가 더 낮다면
+                        answer[i]++; // 등수 증가
                     }
                 }
             }
-            return answer;
+            return answer; // 계산된 등수 배열 반환
         }
 
+        // 테스트 데이터
         let arr = [87, 89, 92, 100, 76];
-        console.log(solution(arr));
+        console.log(solution(arr)); // 등수 결과 출력 [4, 3, 2, 1, 5]
+
     </script>
 </body>
+
 </html>

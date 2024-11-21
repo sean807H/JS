@@ -1,13 +1,15 @@
 <html>
+
 <head>
     <title>this 키워드</title>
 </head>
+
 <body>
 
-    <!-- <button onclick="fullName()">클릭1</button> -->
-    <button onclick="this.style.backgroundColor = 'red'">클릭1</button>
-    <button onclick="callFunc(this)">클릭2</button>
-    <select onchange="changeSelect(this)">
+    <button onclick="fullName()">클릭1</button>
+    <button onclick="style.backgroundColor = 'red'">클릭1</button>
+    <button onclick="callFunc(this)">클릭2</button> <!-- this를 쓰면 문장을 출력함. 태그 자체가 나옴 -->
+    <select onchange="changeSelect(this)"> <!-- .value로 value 값이 나옴 -->
         <option value="모에">1</option>
         <option value="무에">2</option>
         <option value="뀽">3</option>
@@ -18,31 +20,39 @@
         console.log(this);
         console.log(window);
 
-        function changeSelect(obj){
+        function changeSelect(obj) {
             // console.log(obj);
             console.log(obj.value);
         }
 
-        function callFunc(obj){
-            console.log(obj);   
+        function callFunc(obj) {
+            console.log(obj);
         }
 
-        function fullName(){
+        function fullName() {
             alert("얼레리꼴레리 메롱~");
             // console.log(this);
         }
 
         var person = {
-            firstName : "길동",
-            lastName : "홍",
-            fullName : function()
-            {
-                return this.firstName + " " + this.lastName;
-                // return person.firstName + " " + person.lastName;
+            firstName: "길동",
+            lastName: "홍",
+            fullName: function () {
+                return this.firstName + " " + this.lastName; // this: 호출된 객체
             }
         };
-        console.log(person.fullName());
+
+        var anotherPerson = {
+            firstName: "영희",
+            lastName: "김",
+            fullName: person.fullName // person.fullName을 참조. 이래서 this 를 쓰는거임
+        };
+
+        console.log(person.fullName()); // "길동 홍"
+        console.log(anotherPerson.fullName()); // "영희 김"
+
         // fullName();
     </script>
 </body>
+
 </html>

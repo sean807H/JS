@@ -5,8 +5,14 @@
 </head>
 
 <body>
+    <!-- **axios**는 브라우저와 Node.js 환경에서 사용 가능한 HTTP 요청 라이브러리야. -->
+    <!-- 서버와 데이터를 주고받는 작업(GET, POST 등)을 간편하게 처리하기 위해 사용돼. -->
+    <!-- 이 선언이 없으면 axios 객체를 사용할 수 없어, 즉 코드에서 axios.get 같은 메서드를 호출하면 오류가 발생해. -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script>
+        // Promise는 JavaScript에서 비동기 작업을 처리하기 위한 객체야.
+        // 비동기 작업(예: 서버 요청, 파일 읽기 등)이 완료되었을 때 결과를 반환하거나 에러를 처리할 수 있게 도와줘.
+
         // var x = 1;
         // var y = callServerDate();
         // var z = x + y;
@@ -14,10 +20,16 @@
 
         var url = "https://78aeb894-7efa-4ce7-a6fe-5ef1b0f62dab.mock.pstmn.io/productList";
 
-        // var data = axios.get(url).then(function (response) {
-        //     console.log(response.data);
-        // })
 
+        // 재사용 불가능: 이 코드는 axios.get의 결과를 다른 곳에서 재사용하거나 반환할 수 없음.
+        // 결과값은 data 변수에 담기지 않고, 콘솔에만 출력.
+        var data = axios.get(url).then(function (response) {
+            console.log(response.data);
+        })
+
+        // Promise는 클래스야. 클래스를 사용할 때 객체를 생성하려면 new 키워드가 필요해.
+        // .then()은 Promise가 성공(resolve)했을 때 실행할 작업을 정의해.
+        // 즉, Promise가 완료된 이후의 동작을 처리하는 메서드야.
         function getData() {
             return new Promise(function (resolve, reject) {
                 axios.get(url).then(function (response) {           // 정상적으로 데이터를 가져올떄까지 실행시키지 않음.then 이후에 가져옴
@@ -28,6 +40,12 @@
             });
         }
 
+        // 이 함수는 Promise 객체를 반환해.
+        // Promise는 비동기 작업이 완료되었는지, 실패했는지 알리는 데 사용돼.
+        // resolve: 작업이 성공했을 때 호출. Promise를 "성공 상태"로 변경하며, 데이터를 전달해.
+        // reject: 작업이 실패했을 때 호출. Promise를 "실패 상태"로 변경하며, 에러를 전달해.
+        // axios.get(url)로 데이터를 가져오고, 성공하면 데이터를 resolve로 넘겨.
+
         var total = 0;
 
         getData().then(function (data) {
@@ -37,6 +55,7 @@
             console.log(total);
         });
 
+        // getData 호출: 이 함수는 Promise를 반환하므로, .then으로 데이터를 처리해.
     </script>
 </body>
 

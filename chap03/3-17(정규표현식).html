@@ -1,94 +1,108 @@
 <html>
+
 <head>
     <title>정규표현식(Rugular Expression)</title>
 </head>
+
 <body>
     <script>
-        //정규표현식 형식 : /pattern/modifier
-        // var patt = /Worid/ig;
+        // 정규표현식 형식: /pattern/modifier
+        // 예: /World/ig (i: 대소문자 구분 안 함, g: 전역 검색)
 
-        // var str1 = "Hello World";
-        // console.log(str1.search("World"));
-        // console.log(str1.search(/World/));
-        // console.log(str1.search(/World/i));     // i 대소문자 구분을 안함.
+        // 테스트용 문자열
+        var str1 = "Hello World";
+        console.log(str1.search("World"));        // 6 (문자열 "World"의 시작 위치 반환)
+        console.log(str1.search(/World/));       // 6 (정규표현식으로 검색)
+        console.log(str1.search(/World/i));      // 6 (i: 대소문자 구분하지 않음)
 
-        // var str2 = "Hello WORLD! word";
-        // console.log(str2.replace("World","Hong"));
-        // console.log(str2.replace(/World/ig,"Hong"));        // g : 전부 다 교체
+        // 문자열 치환
+        var str2 = "Hello WORLD! word";
+        console.log(str2.replace("World", "Hong"));   // Hello WORLD! word (치환 안 됨, 대소문자 구분)
+        console.log(str2.replace(/World/ig, "Hong")); // Hello Hong! word (i: 대소문자 구분 X, g: 전역 치환)
 
-        // var patt = /Worid/ig;
-        // console.log(str2.replace(patt,"Hong"))
+        // 변수에 패턴을 저장해 사용
+        var patt = /Worid/ig;  // "Worid"를 대소문자 구분 없이 전역으로 검색
+        console.log(str2.replace(patt, "Hong")); // Hello WORLD! word (패턴에 맞는 문자열 없음)
 
-        // var str3 = "Is this all there is";
-        // var patt1 = /[hat]/g;
-        // var result1 = str3.match(patt1)
-        // console.log(result1);
+        // 특정 문자 검색
+        var str3 = "Is this all there is";
+        var patt1 = /[hat]/g; // h, a, t 중 하나라도 포함된 문자 검색
+        var result1 = str3.match(patt1); // ['t', 'h', 'a', 't', 'h']
+        console.log(result1);
 
-        // var str4 = "as00fkaf234jklj2lkjlk3904l1jlj3j";
-        // var patt2 = /[0-9]/g;
-        // var result2 = str4.match(patt2);
-        // // console.log(result2);
-        // console.log(parseInt(result2.join("")));
+        // 숫자 추출
+        var str4 = "as00fkaf234jklj2lkjlk3904l1jlj3j";
+        var patt2 = /[0-9]/g; // 모든 숫자 검색
+        var result2 = str4.match(patt2); // ['2', '3', '4', '2', '3', '9', '0', '4', '1', '3']
+        console.log(parseInt(result2.join(""))); // 2342390413 (숫자를 하나의 정수로 변환)
 
-        // var str5 = "re, green, red, gree, gen, red, blue, yellow"
-        // var patt3 = /(red|green)/g;
-        // var result3 = str5.match(patt3);
-        // console.log(result3);
+        // OR 조건으로 검색
+        var str5 = "re, green, red, gree, gen, red, blue, yellow";
+        var patt3 = /(red|green)/g; // red 또는 green 검색
+        var result3 = str5.match(patt3); // ['green', 'red', 'red']
+        console.log(result3);
 
-        // // \d : 숫자인거 찾기
-        // var str6 = "Please call 119 Hurry Up"
-        // var patt4 = /\d/g;
-        // var result4 = str6.match(patt4)
-        // console.log(result4);
+        // 숫자 검색 (\d)
+        var str6 = "Please call 119 Hurry Up";
+        var patt4 = /\d/g; // 모든 숫자 검색
+        var result4 = str6.match(patt4); // ['1', '1', '9']
+        console.log(result4);
 
-        // // \s : 공백 문자 찾기
-        // var str7 = "Please call 119 Hurry Up"
-        // var patt5 = /\s/g;
-        // var result5 = str7.match(patt5)
-        // console.log(result5);
+        // 공백 문자 검색 (\s)
+        var str7 = "Please call 119 Hurry Up";
+        var patt5 = /\s/g; // 모든 공백 검색
+        var result5 = str7.match(patt5); // [' ', ' ', ' ', ' ']
+        console.log(result5);
 
-        // // \b : LO 로 시작하는 단어를 찾기
-        // var str8 = "HELLO, LOOK AT ME"
-        // var patt6 = /\bLO/g;
-        // var result6 = str8.match(patt6)
-        // console.log(result6);
+        // 특정 단어로 시작 (\b)
+        var str8 = "HELLO, LOOK AT ME";
+        var patt6 = /\bLO/g; // LO로 시작하는 단어 검색
+        var result6 = str8.match(patt6); // ['LO']
+        console.log(result6);
 
-        // // n+ : n이 최소한 1개 이상(one or more)
-        // var str9 = "HelloOo";
-        // var patt7 = /o+/g;      // oo, o
-        // console.log(str9.match(patt7));
+        // 하나 이상의 문자 (n+) one or more
+        var str9 = "HelloOo";
+        var patt7 = /o+/g; // o가 하나 이상인 경우
+        console.log(str9.match(patt7)); // ['o', 'o']
 
-        // // n* : n이 zero or more
-        // var str10 = "HelloOo WOrld";
-        // var patt8 = /lo*/g;     // l로 시작해야되고 뒤에 o 가 있어도 되고 없어도 되고 그래서 l, lo, l
-        // var patt9 = /lo+/g;     // lo
-        // console.log(str10.match(patt8));
-        // console.log(str10.match(patt9));
+        // 0개 이상 반복 (n*) zero or more
+        var str10 = "HelloOo WOrld";
+        var patt8 = /lo*/g; // l로 시작하며, 뒤에 o가 있을 수도 있고 없을 수도 있음
+        var patt9 = /lo+/g; // l로 시작하며, 뒤에 o가 최소 1개 이상 있음
+        console.log(str10.match(patt8)); // ['l', 'lo', 'l']
+        console.log(str10.match(patt9)); // ['lo']
 
-        // // n?: zero or one
-        // var str11 = "1, 100 and 1000 or 1111";
-        // var patt10 = /10?/g;
-        // console.log(str11.match(patt10));
+        // 0개 또는 1개 (n?) zero or one
+        var str11 = "1, 100 and 1000 or 1111";
+        var patt10 = /10?/g; // 1 뒤에 0이 있을 수도 있고 없을 수도 있음
+        console.log(str11.match(patt10)); // ['1', '10', '10', '1', '1', '1', '1']
 
-        // 실무예 : 우편번호 5자리
-        // 32543 : 다섯자리인지 판별, 다섯자리 모두가 숫자인지 판별
-        // var patt10 = /\d{5}/;        // 숫자 5자리
-        // var postalCode = "23452";    // true
-        // var postalCode = "P23412";   // 연속된 5자리 숫자가 있기때문에 true
-        // console.log(patt10.test(postalCode));
+        // 실무 예제: 우편번호 5자리
+        var patt10 = /\d{5}/; // 연속된 5자리 숫자
+        var postalCode = "23452";
+        console.log(patt10.test(postalCode)); // true
 
-        // var patt11 = /^\d{5}$/;        // 숫자로 시작해라, 숫자 5자리, 5자리로 끝내라(끝)
-        // var postalCode = "2345211";    // false
-        // console.log(patt11.test(postalCode));
+        var patt11 = /^\d{5}$/; // 정확히 5자리 숫자로 시작하고 끝남
+        postalCode = "2345211";
+        console.log(patt11.test(postalCode)); // false
 
-        // 핸드폰 번호 : 010-1234-5678
-        // var patt12 = /^(010)-\d{4}-\d{4}$/;
-        // var postalCode = "010-4664-5231";
-        // console.log(patt12.test(postalCode));
+        // 핸드폰 번호 형식
+        var patt12 = /^(010)-\d{4}-\d{4}$/; // 010-숫자4자리-숫자4자리 형식
+        postalCode = "010-4664-5231";
+        console.log(patt12.test(postalCode)); // true
 
-        // 이메일주소 : w2312w@gmail.com
-        var patt13 = /^\w+([._-]?\w+)*@\w+(.\w{2,3})+$/;
-        console.log(patt13.test("w2312w@gmail.com"));
+        // 이메일 주소 형식
+        var patt13 = /^\w+([._-]?\w+)*@\w+(\.\w{2,3})+$/;
+        // \w+ : 문자 또는 숫자가 1개 이상
+        // ([._-]?\w+)* : ., _, - 뒤에 문자가 0번 또는 1번 반복
+        // @ : @ 기호
+        // \w+ : 문자 또는 숫자가 1개 이상
+        // (\.\w{2,3})+ : .과 문자 2~3개가 1번 이상 반복
+        console.log(patt13.test("w2312w@gmail.com")); // true
+
     </script>
 </body>
+
 </html>
+
+

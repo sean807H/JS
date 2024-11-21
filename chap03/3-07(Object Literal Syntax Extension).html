@@ -4,11 +4,11 @@
  </head>
  <body>
     <script>
-        // var person = {
-        //     fistName : "길동",
-        //     lastName : "홍"
-        // }
-        // console.log(person);
+        var person = {
+            fistName : "길동",
+            lastName : "홍"
+        }
+        console.log(person);
 
         // var first = "서연";
         // var last = "김";
@@ -29,12 +29,13 @@
         }
         console.log(score)
 
-        score.grade = 2;
+        score.grade = 2;      // 객체.key = value
         console.log(score);
 
         var type3 = "성적";
-        score[type3] = 2;
+        score[type3] = 2;     // score.grade = score[type3] 두개 형식은 같다
         console.log(score);
+        // 출력값: key - age, grade, name, 성적 | value: "28","2","홍","2"
     </script>
  </body>
  </html>

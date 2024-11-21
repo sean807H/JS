@@ -36,6 +36,9 @@
         async function getData2() {
             return (await axios.get(url)).data;
         }
+        // getData2 함수는 axios.get(url)을 호출하고, 그 결과(Promise)가 완료될 때까지 기다림.
+        // async function getData2() 함수는 데이터를 요청하고 결과를 반환할 뿐,
+        // 완료된 뒤 응답 객체의 data 속성만 반환.
 
         async function calculateSum() {
             var data = await getData2();
@@ -47,7 +50,18 @@
             console.log(total);
         }
 
-        calculateSum();
+        calculateSum(); // 출력값 : 79000
+
+        // **async와 await**는 JavaScript에서 비동기 작업을 처리하기 쉽게 만들어주는 문법이야.
+        // async와 await은 기존 Promise와 .then을 대체해 비동기 코드를 더 깔끔하게 작성할 수 있게 해.
+
+        // async 키워드는 비동기 함수를 정의할 때 사용해.
+        // 이 함수는 항상 Promise 객체를 반환해. (자동으로 Promise로 감싸줌.)
+        // 반환 값이 Promise가 아니어도, Promise.resolve()로 감싸져 반환돼.
+
+        // await 키워드는 비동기 작업(Promise)이 완료될 때까지 기다렸다가 결과를 반환해.
+        // await은 반드시 async 함수 안에서만 사용할 수 있어.
+        // 비동기 작업이 끝날 때까지 기다리므로, 결과를 동기적으로 처리할 수 있는 것처럼 보이게 만들어 줘.
 
     </script>
 </body>

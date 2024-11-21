@@ -6,21 +6,21 @@
 
 <body>
     <script>
-        // Spread Operator : 분해 기능
-        // var arr1 = [4, 5, 6];
-        // var arr2 = [1, 2, 3];
-        // var arr3 = arr2.concat(arr1);
-        // console.log(arr3);
+        //Spread Operator : 분해 기능
+        var arr1 = [4, 5, 6];
+        var arr2 = [1, 2, 3];
+        var arr3 = arr2.concat(arr1);
+        console.log(arr3); // [1,2,3,4,5,6]
 
-        // var arr4 = [4, 5, 6];
-        // var arr5 = [1, 2, 3, ...arr4];
-        // var arr5 = ["영", 1, 2, ...arr4, 3, 3.14, null];
-        // console.log(arr5);
+        var arr4 = [4, 5, 6];
+        var arr5 = [1, 2, 3, ...arr4];
+        var arr5 = ["영", 1, 2, ...arr4, 3, 3.14, null];
+        console.log(arr5);
 
-        // var arr6 = [4, 5, 6];
-        // var arr7 = [1, 2, 3];
-        // var arr8 = [...arr7, ...arr6];
-        // console.log(arr8);
+        var arr6 = [4, 5, 6];
+        var arr7 = [1, 2, 3];
+        var arr8 = [...arr7, ...arr6];
+        console.log(arr8);
 
         var str = "CDFG"
         var alphabet = ['A', 'B', ...str];       // 배열값 3

@@ -4,16 +4,21 @@
 </head>
 <body>
     <script>
-        // try{
-        //     consol.log("log 메세지");
-        // }
-        // catch(err){
-        //     console.log(err.name);
-        //     console.log(err.message);
-        // }
-        // console.log("안녕하세요");
+        try{
+            consol.log("log 메세지");
+        }
+        catch(err){
+            console.log(err.name);
+            console.log(err.message);
+        }
+        // console 스펠링 틀려서 catch 문으로 넘어감
+        // ReferenceError
+        // consol is not defined
 
         // throw를 사용하여 강제로 예외를 발생시킴
+
+        // throw는 JavaScript에서 사용자가 원하는 시점에 예외를 강제로 발생시키는 키워드야.
+        // 의미: "지금 이 시점에서 문제가 발생했으니 처리해야 한다!"는 신호를 코드에 전달하는 것.
         var x = 5;
         
         try{
@@ -21,7 +26,7 @@
             var y = x+3;
             console.log(y);
         } catch(error){
-            console.log(`error message : ${error}`);
+            console.log(`error message : ${error}`);    // x=5 가 없으면 실행
         } finally{
             console.log("exception 유무와 상관없이 무조건 실행됨.");
         }

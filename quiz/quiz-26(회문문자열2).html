@@ -8,24 +8,21 @@
     <script>
         function solution(str) {
             let answer = "";
-            str = str.toLowerCase().replace(/[^a-z]/g,"")
+            // 입력 문자열을 소문자로 변환하고, 알파벳 소문자(a-z)만 남김
+            str = str.toLowerCase().replace(/[^a-z]/g, "");
 
+            // 주석 처리된 부분은 각 문자(char)가 알파벳인지 확인해 문자열을 구성하는 방식
             // for (let char of str.toLowerCase()) {
             //     if (char >= 'a' && char <= 'z') {
             //         answer += char;
             //     }
             // }
-
-            if (str === str.split('').reverse().join('')) {
-                return "YES";
-            } else {
-                return "NO";
-            }
-
-            return answer;
+            
         }
-        let str = "found77, Time^, study, Yduts; emit, 9Dnuof"
-        console.log(solution(str));
+
+        let str = "found77, Time^, study, Yduts; emit, 9Dnuof"; // 테스트 문자열
+        console.log(solution(str)); // 출력: "YES"
+
     </script>
 </body>
 

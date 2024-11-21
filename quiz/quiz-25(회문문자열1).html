@@ -7,28 +7,26 @@
 <body>
     <script>
         function solution(str) {
+            let answer = str.toLowerCase(); // 입력 문자열을 소문자로 변환하여 대소문자 구분 없이 처리
 
-            let answer = str.toLowerCase();
-
-            // str = str.toLowerCase();
-            // let len = str.length;
-
-            // 방법1 : 직접 비교 방식
+            // 방법 1: 직접 비교 방식
+            // 문자열 길이의 절반까지만 순회하며 앞뒤 문자가 동일한지 확인
             // for (let i = 0; i < Math.floor(len / 2); i++) {
-            //     if(str[i] !== str[len-i-1]) return "NO";
-
+            //     if (str[i] !== str[len - i - 1]) return "NO";
             // }
 
+            // 방법 2: 문자열 뒤집기 방식
+            // 입력 문자열을 뒤집은 값과 비교
             if (answer === answer.split('').reverse().join('')) {
-                return "YES";
+                return "YES"; // 뒤집어도 동일하면 회문(Palindrome)
             } else {
-                return "NO";
+                return "NO"; // 동일하지 않으면 회문이 아님
             }
-
-            return answer;
         }
-        let str = "gooG";
-        console.log(solution(str));
+
+        let str = "gooG"; // 테스트 문자열
+        console.log(solution(str)); // 출력: "YES"
+
     </script>
 </body>
 

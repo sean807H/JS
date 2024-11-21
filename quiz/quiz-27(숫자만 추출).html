@@ -7,38 +7,33 @@
 <body>
     <script>
         function solution(str) {
-
-            // 방법 1: parseInt()
+            // 방법 1: parseInt()를 사용하여 숫자 추출
             // let answer = "";
-
-            // for(let x of str){
-            //     if(!isNaN(x)){
-            //         // 숫자가 아닌게 아닌거
-            //         answer += x;
+            // for (let x of str) {
+            //     if (!isNaN(x)) { // x가 숫자일 경우
+            //         answer += x; // 숫자를 문자열로 이어붙임
             //     }
             // }
+            // return parseInt(answer); // 문자열로 이어붙인 숫자를 정수로 변환
 
-            // return parseInt(answer);
-
-            // 방법 2: parseInt() 안쓰고 Number()
+            // 방법 2: parseInt() 대신 Number()를 사용하여 숫자 추출
             // let answer = 0;
-
-            // for(let x of str){
-            //     if(!isNaN(x)){
-            //         // 숫자가 아닌게 아닌거
-            //         answer = answer * 10 + Number(x);
+            // for (let x of str) {
+            //     if (!isNaN(x)) { // x가 숫자일 경우
+            //         answer = answer * 10 + Number(x); // 숫자를 정수로 계산하며 추가
             //     }
             // }
-
             // return answer;
 
-            // 방법 3: 정규표현식
-            let answer = Number(str.replace(/[^0-9]/g,''));
-            
+            // 방법 3: 정규표현식을 사용하여 숫자 추출
+            // [^0-9]: 숫자가 아닌 문자를 의미. g 플래그는 전역으로 모든 숫자가 아닌 문자 제거.
+            let answer = Number(str.replace(/[^0-9]/g, ''));
             return answer;
         }
-        let str = "g0en270sBeSoft"
-        console.log(solution(str));
+
+        let str = "g0en270sBeSoft"; // 입력 문자열
+        console.log(solution(str)); // 출력: 270
+
     </script>
 </body>
 

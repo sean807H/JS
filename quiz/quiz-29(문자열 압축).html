@@ -1,30 +1,35 @@
 <html>
+
 <head>
     <title>문자열 압축</title>
 </head>
+
 <body>
     <script>
-        function solution(str){
-            let answer = "";
-            let cnt = 1;
-            str = str + " ";
+        function solution(str) {
+            let answer = ""; // 압축된 문자열을 저장할 변수
+            let cnt = 1; // 연속된 문자의 개수를 저장할 변수
+            str = str + " "; // 마지막 문자를 처리하기 위해 문자열 끝에 공백 추가
 
-            for(let i=0; i<=str.length-1; i++){
-                if(str[i]===str[i+1]){
-                    cnt++;
-
-                }
-                else{
-                    answer += str[i];
-                    if(cnt > 1) answer += String(cnt);
-                    cnt = 1;
+            // 문자열 순회
+            for (let i = 0; i <= str.length - 1; i++) {
+                if (str[i] === str[i + 1]) {
+                    // 현재 문자와 다음 문자가 같다면
+                    cnt++; // 연속된 문자 개수 증가
+                } else {
+                    // 현재 문자와 다음 문자가 다르다면
+                    answer += str[i]; // 현재 문자를 결과 문자열에 추가
+                    if (cnt > 1) answer += String(cnt); // 연속된 개수가 2 이상이면 개수 추가
+                    cnt = 1; // 개수 초기화
                 }
             }
-            
-            return answer;
+
+            return answer; // 압축된 문자열 반환
         }
-        let str = "KKHSSSSSSSE";
-        console.log(solution(str));
+
+        let str = "KKHSSSSSSSE"; // 입력 문자열
+        console.log(solution(str)); // K2HS7E
     </script>
 </body>
+
 </html>

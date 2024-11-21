@@ -7,40 +7,41 @@
 <body>
     <script>
         function solution(s, t) {
-            let answer = [];
-            let p = 0;
+            let answer = []; // 각 문자의 t와의 최소 거리를 저장할 배열
+            let p = 0; // 현재 위치에서 t와의 거리 계산을 위한 변수
 
-            //왼쪽부터 거리의 크키를 배열에 넣음
+            // 1. 왼쪽에서 오른쪽으로 탐색하며 거리 계산
             for (let x of s) {
                 if (x === t) {
+                    // t와 동일한 문자가 나오면 거리 0
                     p = 0;
-                    answer.push(p);
-                }
-                else {
+                    answer.push(p); // 거리 0을 배열에 추가
+                } else {
+                    // t와 동일하지 않으면 거리 증가
                     p++;
-                    answer.push(p);
+                    answer.push(p); // 증가된 거리 추가
                 }
-
             }
 
-            //오른쪽부터 거리의 크기를 구한뒤, 왼쪽값과 비교하여 작은값을 배열에 넣음
-            p = 1000;
-
-            for (let i = (s.length - 1); i >= 0; i--) {
+            // 2. 오른쪽에서 왼쪽으로 탐색하며 거리 계산 및 최소값 비교
+            p = 1000; // 큰 값으로 초기화 (충분히 큰 값)
+            for (let i = s.length - 1; i >= 0; i--) {
                 if (s[i] === t) {
+                    // t와 동일한 문자가 나오면 거리 0
                     p = 0;
-                }
-                else {
+                } else {
+                    // t와 동일하지 않으면 거리 증가
                     p++;
+                    // 왼쪽에서 계산된 거리와 비교하여 최소값 저장
                     answer[i] = Math.min(answer[i], p);
                 }
             }
 
-            return answer;
+            return answer; // 최소 거리 배열 반환
         }
-        let str = "teachermode";
-        console.log(solution(str, "e"));
 
+        let str = "teachermode"; // 입력 문자열
+        console.log(solution(str, "e")); // 출력 결과 [1, 0, 1, 2, 1, 0, 1, 2, 2, 1, 0]
     </script>
 </body>
 

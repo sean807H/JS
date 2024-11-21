@@ -1,25 +1,32 @@
 <html>
+
 <head>
     <title>가산점 계산하기</title>
 </head>
+
 <body>
     <script>
-        function solution(arr){
-            let answer = 0;
-            let score = 0;
-            
-            for(let x of arr){
-                if(x === 1){
-                    score += 1;
-                    answer += score;
+        // 1이 연속되는 구간에 점수를 추가
+        function solution(arr) {
+            let answer = 0; // 총 점수를 저장할 변수
+            let score = 0;  // 연속된 1의 점수를 저장할 변수
+
+            for (let x of arr) { // 배열의 각 요소를 순회
+                if (x === 1) {   // 현재 요소가 1이라면
+                    score += 1;  // 점수를 1 증가
+                    answer += score; // 누적 점수에 현재 점수를 더함
+                } else {
+                    score = 0;   // 요소가 0이면 점수를 초기화
                 }
-                else score = 0;
             }
 
-            return answer;
+            return answer; // 최종 점수를 반환
         }
-        let arr = [1,0,1,1,1,0,0,1,1,0];
-        console.log(solution(arr));
+
+        let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]; // 테스트 배열
+        console.log(solution(arr)); // 결과 출력 10
+
     </script>
 </body>
+
 </html>
