@@ -3,11 +3,54 @@
     <title>HTML Element 컨트롤</title>
 </head>
 <body>
-    <input type="text">
+    <input type="text" id="text1" value="홍길동">
+    <br>
+    <br>
+    관심사 : 세븐틴
+    <br>
+    <input type = "checkbox" name="chk" value="IT">IT/컴퓨터
+    <input type = "checkbox" name="chk" value="DK">도겸
+    <input type = "checkbox" name="chk" value="DINO">디노
+    <input type = "checkbox" name="chk" value="WOON">원우
+    <input type = "checkbox" name="chk" value="COUPS">쿱스
+    <br>
+    <br>
+    <input type="radio" name="gen">남자
+    <input type="radio" name="gen" checked>여자
+    <br>
+    <br>
     <input type="button" onclick="chio()" value="클릭">
     <script>
+        document.getElementById("text1").value = "이순신";
+        document.querySelector("chk")
         function chio() {
-            console.log("버튼 클릭");
+            // console.log("버튼 클릭");
+
+            console.log("[클릭] 버튼 클릭");
+            // var txt1 = document.getElementById("text1");
+            // console.log(txt1);
+            // console.log(txt1.value);
+
+            // jQuery 방식
+            // var txt2 = document.querySelector("#text1");
+            // console.log(txt2);
+            // console.log(txt2.value);
+
+            // var check_box = document.getElementsByName("chk");
+            // console.log(check_box);      // array
+
+            // for(var i=0; i<check_box.length; i++){
+            //     if(check_box[i].checked)
+            //         console.log(check_box[i].value);
+            // }
+
+            // jQuery 방식
+            var check_box = document.querySelectorAll("[name=chk]:checked");        // checked 된것만 출력(for문에서 if문 쓸 필요없음)
+            console.log(check_box);        // NodeList
+            
+            for(var i=0; i<check_box.length; i++){
+                console.log(check_box[i].value);
+            }
         }
     </script>
 </body>
