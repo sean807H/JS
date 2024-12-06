@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 핸들러</title>
+</head>
+<body>
+    focus: blur;
+    <br>
+    <input type="text" id="text1" onfocus="doFocus()" onblur="doBlur(this)">
+    <br>
+    <br>
+    select : 
+    <br>
+    <select id="select1" onchange="doChange(this)">
+        <option value="KO">한국</option>
+        <option value="CH">중국</option>
+        <option value="JP">일본</option>
+    </select>
+    <br>
+    <br>
+    <input type="button" value="클릭" onclick="doClick()">
+    <br>
+    <br>
+    KeyDown : 
+    <br>
+    <input type="text" id="text2" onkeydown="doKeydown(event)">
+    <input type="button" value="조회" onclick="doSearch()">
+
+    <script>
+        function doClick() {
+            console.log("[버튼] 클릭");
+        }
+
+        function doFocus(){
+            console.log("doFocus() 호출");
+        }
+        function doBlur(obj){
+            console.log("doBlur() 호출");
+            if(obj.value === ""){
+                alert("내용을 입력해주세요");
+            }
+        }
+        // function doChange(){
+        //     // console.log("doChange() 호출");
+        //     var select_value = document.getElementById("select1");
+        //     console.log(select_value.value);
+        // }
+
+        // this 를 써주면
+        function doChange(obj){
+            console.log(obj.value);
+        }
+        function doKeydown(event){
+            // console.log("doKeydown() 호출");
+            // console.log(event);
+            if(event.keyCode === 13){
+                // console.log("[엔터] 클릭");
+                doSearch();
+            }
+        }
+        function doSearch(){
+            console.log("조회를 시작합니다");
+        }
+    </script>
+</body>
+</html>
