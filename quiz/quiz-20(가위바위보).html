@@ -10,6 +10,7 @@
             for(let i=0; i<a.length; i++){
                 // console.log("i = "+i+" A = "+a[i]+" B = "+b[i])
                 if(a[i] === b[i]) answer += "D";        // answer.push("D"); !!!!!!!!!!
+                // 첫 번째 사람이 이기면 A 두 번째 사람이 이기면 B 비기면 D 
                 else if((a[i] === 1 & b[i] === 3) || (a[i] === 2 & b[i] === 1) || (a[i] === 3 & b[i] === 2)) answer += "A";
                 else answer += "B";
             }
@@ -17,14 +18,14 @@
         
             return answer;
         }
-        let a = [2,3,3,1,3]
-        let b = [1,1,2,2,3]
+        let a = [2,3,3,1,3]     // 바위, 보, 보, 가위, 보
+        let b = [1,1,2,2,3]     // 가위, 가위, 바위, 바위, 보
         
         // push 일때 배열로 찍기
         // for(var x of solution(a,b)){
         //     console.log(x)
         // }
-        console.log(solution(a,b));
+        console.log(solution(a,b));     // AAABD
         
     </script>
 </body>

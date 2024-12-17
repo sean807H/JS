@@ -7,21 +7,24 @@
 <body>
     <script>
         function solution(arr) {
-            let answer = 1;
+            let answer = 1;  // 증가하는 수열의 길이를 세는 변수, 첫 번째 요소부터 시작하므로 1로 초기화
 
-            max = arr[0];
-            for(let i=1; i<arr.length; i++){
-                if(max<arr[i]){
-                    answer++;
-                    max = arr[i];
+            max = arr[0];  // 첫 번째 요소를 가장 큰 값(max)으로 설정
+
+            // 두 번째 요소부터 배열 끝까지 순차적으로 검사
+            for (let i = 1; i < arr.length; i++) {
+                // 현재 요소가 이전에 기록된 가장 큰 값보다 크면
+                if (max < arr[i]) {
+                    answer++;  // 증가하는 수열의 길이를 1 증가
+                    max = arr[i];  // max를 현재 값(arr[i])으로 갱신
                 }
             }
 
-            return answer;
+            return answer;  // 증가하는 수열의 길이를 반환
         }
 
-        let arr = [130, 135, 148, 140, 145, 150, 150, 153];
-        console.log(solution(arr)); 
+        let arr = [130, 135, 148, 140, 145, 150, 150, 153];  // 배열 정의
+        console.log(solution(arr));  // 5
 
     </script>
 </body>

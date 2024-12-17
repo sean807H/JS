@@ -1,23 +1,31 @@
 <html>
+
 <head>
     <title>큰 수 출력하기</title>
 </head>
+
 <body>
     <script>
-        function solution(arr){
-            let answer = [];
+        function solution(arr) {
+            let answer = [];  // 증가하는 수열의 값을 저장할 빈 배열 선언
 
-            answer.push(arr[0]);
+            answer.push(arr[0]);  // 첫 번째 요소를 증가하는 수열의 시작으로 배열에 추가
 
-            for(let i=1; i<arr.length; i++){
-                if(arr[i]>arr[i-1])
-                    answer.push(arr[i]);
+            // 배열의 두 번째 요소부터 끝까지 순차적으로 비교
+            for (let i = 1; i < arr.length; i++) {
+                // 현재 요소가 이전 요소보다 크면, 증가하는 수열에 해당하므로 추가
+                if (arr[i] > arr[i - 1]) {
+                    answer.push(arr[i]);  // 증가하는 수열의 값이므로 배열에 추가
+                }
             }
-            
-            return answer;
+
+            return answer;  // 증가하는 수열을 포함한 배열을 반환
         }
-        let arr = [7,3,9,5,6,12];
-        console.log(solution(arr));
+
+        let arr = [7, 3, 9, 5, 6, 12];  // 예시 배열
+        console.log(solution(arr));  // [7, 9, 6, 12]
+
     </script>
 </body>
+
 </html>
